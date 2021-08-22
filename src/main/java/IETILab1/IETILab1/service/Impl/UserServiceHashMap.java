@@ -1,7 +1,7 @@
-package IETILab1.service.Impl;
+package IETILab1.IETILab1.service.Impl;
 
-import IETILab1.data.User;
-import IETILab1.service.UserService;
+import IETILab1.IETILab1.data.User;
+import IETILab1.IETILab1.service.UserService;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.HashMap;

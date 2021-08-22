@@ -1,6 +1,4 @@
-package IETILab1.dto;
-
-import java.util.HashMap;
+package IETILab1.IETILab1.dto;
 
 public class UserDto
 {

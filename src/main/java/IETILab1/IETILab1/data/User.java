@@ -1,4 +1,4 @@
-package IETILab1.data;
+package IETILab1.IETILab1.data;
 
 public class User
 {

@@ -1,7 +1,7 @@
-package IETILab1.service;
+package IETILab1.IETILab1.service;
 
 
-import IETILab1.data.User;
+import IETILab1.IETILab1.data.User;
 import java.util.List;
 
 public interface UserService
