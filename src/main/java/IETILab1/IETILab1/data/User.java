@@ -1,28 +1,44 @@
 package IETILab1.IETILab1.data;
 
+import IETILab1.IETILab1.dto.UserDto;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonFormat.Shape;
+import java.util.Date;
+import java.util.UUID;
+
 public class User
 {
-    private String id;
+    private final String id;
     private String name;
     private String lastName;
     private String email;
-    private String createdAt;
+    @JsonFormat(shape = Shape.STRING, pattern = "yyyy-MM-dd")
+    private Date createdAt;
 
-    public User(String id, String name, String lastName, String email, String createdAt)
+    public User(String id, String name, String lastName, String email, Date createdAt)
     {
         this.id = id;
         this.name = name;
         this.lastName = lastName;
         this.email = email;
-        this.createdAt = createdAt;
+    }
+
+    public User(UserDto userDto) {
+        this.id = UUID.randomUUID().toString();
+        this.name = userDto.getName();
+        this.email = userDto.getEmail();
+        this.lastName = userDto.getLastName();
+    }
+
+    public User(UserDto userDto, String id) {
+        this.id = id;
+        this.name = userDto.getName();
+        this.email = userDto.getEmail();
+        this.lastName = userDto.getLastName();
     }
 
     public String getId() {
         return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public String getName() {
@@ -49,11 +65,11 @@ public class User
         this.email = email;
     }
 
-    public String getCreatedAt() {
+    public Date getCreatedAt() {
         return createdAt;
     }
 
-    public void setCreatedAt(String createdAt) {
+    public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
     }
 }

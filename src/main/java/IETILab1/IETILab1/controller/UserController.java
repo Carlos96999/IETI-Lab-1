@@ -36,16 +36,16 @@ public class UserController
 
     @PostMapping
     @ResponseBody
-    public ResponseEntity<User> create( @RequestBody User user) //UserDto userDto
+    public ResponseEntity<User> create( @RequestBody UserDto userDto)
     {
-        return ResponseEntity.status(HttpStatus.OK).body(userService.create(user));
+        return ResponseEntity.status(HttpStatus.OK).body(userService.create(new User(userDto)));
     }
 
     @PutMapping( "/{id}" )
     @ResponseBody
-    public ResponseEntity<User> update( @RequestBody User user, @PathVariable String id )
+    public ResponseEntity<User> update( @RequestBody UserDto userDto, @PathVariable String id )
     {
-        return ResponseEntity.status(HttpStatus.OK).body(userService.update(user, id));
+        return ResponseEntity.status(HttpStatus.OK).body(userService.update(new User(userDto, id), id));
     }
 
     @DeleteMapping( "/{id}" )
